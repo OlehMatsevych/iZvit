@@ -4,14 +4,14 @@
     "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj": {}
   },
   "projects": {
-    "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj": {
+    "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
-        "projectName": "iZvit.DataAccess",
-        "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
+        "projectUniqueName": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj",
+        "projectName": "iZvit.Core",
+        "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj",
         "packagesPath": "C:\\Users\\olehm\\.nuget\\packages\\",
-        "outputPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\obj\\",
+        "outputPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\olehm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,78 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
+        "projectName": "iZvit.DataAccess",
+        "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\olehm\\.nuget\\packages\\",
+        "outputPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\olehm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj": {
+                "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
