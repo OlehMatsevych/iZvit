@@ -84,3 +84,7 @@ E:\4_course\4.1\Архітектура та проектуваняя пз\projec
 E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.API\obj\Debug\net6.0\iZvit.API.pdb
 E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.API\obj\Debug\net6.0\iZvit.API.genruntimeconfig.cache
 E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.API\obj\Debug\net6.0\ref\iZvit.API.dll
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.API\bin\Debug\net6.0\AutoMapper.dll
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.API\bin\Debug\net6.0\iZvit.Application.dll
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.API\bin\Debug\net6.0\iZvit.Application.pdb
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
