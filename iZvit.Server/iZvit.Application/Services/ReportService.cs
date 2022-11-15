@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using CsvHelper;
 using iZvit.Application.FilterModels;
 using iZvit.Application.Models;
 using iZvit.Application.Responses;
 using iZvit.Application.Services.Contracts;
 using iZvit.Core.Entities;
 using iZvit.DataAccess.Repositories.Contracts;
+using System.Globalization;
+using System.Text;
 
 namespace iZvit.Application.Services
 {
@@ -46,7 +49,7 @@ namespace iZvit.Application.Services
             var entity = _mapper.Map<Report>(report);
 
             await _repository.UpdateAsync(entity);
-            var updatedReport = _repository.GetWhere(x=>x.Id == id);
+            var updatedReport = _repository.GetWhere(x=>x.Id == id).FirstOrDefault();
 
             return _mapper.Map<ReportModel>(updatedReport);
         }
@@ -63,16 +66,36 @@ namespace iZvit.Application.Services
 
         public IEnumerable<ReportModel> GetReports()
         {
-            var reports = _repository.GetAll(q => q).AsParallel().ToList();
+            var reports = _repository.GetAll().AsParallel().ToList();
             if (reports == null)
             {
                 throw new Exception("Reports not found");
             }
             return _mapper.Map<IEnumerable<ReportModel>>(reports);
         }
-        public Task<IEnumerable<ReportModel>> GetFilteredReportsAsync(GetReportsFilter getReportsFilter)
+        public IEnumerable<ReportModel> GetFilteredReports(GetReportsFilter getReportsFilter)
+            => _mapper.Map<IEnumerable<ReportModel>>(
+                getReportsFilter.FilterBy switch
+                {
+                    "Title" => _repository.GetWhere(x => x.Title == getReportsFilter.FilterValue).ToList(),
+                    "CreatedBy" => _repository.GetWhere(x => x.CreatedBy == getReportsFilter.FilterValue).ToList(),
+                    "CreateDate" => _repository.GetWhere(x => x.CreateDate == DateTime.Parse(getReportsFilter.FilterValue)).ToList(),
+                    "Type" => _repository.GetWhere(x => (int)x.ReportType == int.Parse(getReportsFilter.FilterValue)).ToList(),
+                    _ => _repository.GetAll().AsParallel().ToList()
+                });     
+        public byte[] DownloadReport(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = _repository.GetWhere(x => x.Id == id).FirstOrDefault();
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                using (TextWriter textWriter = new StreamWriter(stream))
+                using (CsvWriter csv = new CsvWriter(textWriter, CultureInfo.InvariantCulture))
+                {
+                    csv.WriteRecord(entity);
+                }
+                return stream.ToArray();
+            }
         }
     }
 }

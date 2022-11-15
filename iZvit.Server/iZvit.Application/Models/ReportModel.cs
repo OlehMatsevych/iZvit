@@ -1,4 +1,5 @@
 ﻿using iZvit.Core.Enums;
+using System.Text.Json.Serialization;
 
 namespace iZvit.Application.Models
 {
@@ -9,6 +10,8 @@ namespace iZvit.Application.Models
         public string? Description { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime? CreateDate { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ReportType? ReportType { get; set; }
     }
 }

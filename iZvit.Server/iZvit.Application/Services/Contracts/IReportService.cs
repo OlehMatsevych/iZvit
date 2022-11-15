@@ -11,6 +11,7 @@ namespace iZvit.Application.Services.Contracts
         Task<ReportModel> UpdateReportAsync(Guid id, ReportModel report);
         Task<OperationStatus> DeleteReportAsync(Guid id);
         Task<ReportModel> AddReportAsync(ReportModel report);
-        Task<IEnumerable<ReportModel>> GetFilteredReportsAsync(GetReportsFilter getReportsFilter);
+        IEnumerable<ReportModel> GetFilteredReports(GetReportsFilter getReportsFilter);
+        byte[] DownloadReport(Guid id);
     }
 }
