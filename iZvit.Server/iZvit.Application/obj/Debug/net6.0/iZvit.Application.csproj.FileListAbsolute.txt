@@ -10,3 +10,8 @@ E:\4_course\4.1\Архітектура та проектуваняя пз\projec
 E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\obj\Debug\net6.0\refint\iZvit.Application.dll
 E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\obj\Debug\net6.0\iZvit.Application.pdb
 E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\obj\Debug\net6.0\ref\iZvit.Application.dll
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\bin\Debug\net6.0\iZvit.Core.dll
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\bin\Debug\net6.0\iZvit.DataAccess.dll
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\bin\Debug\net6.0\iZvit.Core.pdb
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\bin\Debug\net6.0\iZvit.DataAccess.pdb
+E:\4_course\4.1\Архітектура та проектуваняя пз\project\iZvit\iZvit.Server\iZvit.Application\obj\Debug\net6.0\iZvit.Application.csproj.CopyComplete
