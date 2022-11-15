@@ -59,11 +59,11 @@ namespace iZvit.API.Controllers
             }
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateReport(Guid id, ReportModel model)
+        public async Task<IActionResult> UpdateReport(Guid id, ReportModel model)
         {
             try
             {
-                var updatedReport = _reportService.UpdateReportAsync(id, model);
+                var updatedReport = await _reportService.UpdateReportAsync(id, model);
                 return Ok(updatedReport);
             }
             catch (Exception ex) 
@@ -72,11 +72,11 @@ namespace iZvit.API.Controllers
             }
         }
         [HttpDelete("{id}")]
-        public IActionResult DeleteReportById(Guid id)
+        public async Task<IActionResult> DeleteReportById(Guid id)
         {
             try
             {
-                var status = _reportService.DeleteReportAsync(id);
+                var status = await _reportService.DeleteReportAsync(id);
                 return Ok(status);
             }
             catch (Exception ex)
@@ -89,8 +89,23 @@ namespace iZvit.API.Controllers
         {
             try
             {
-                //var report = _reportService.GetReportById(id);
-                return Ok("NOT IMPLEMENTED YET");
+                var reports = _reportService.GetFilteredReports(filter);
+                return Ok(reports);
+            }   
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("download/{id}")]
+        public IActionResult DownloadReportById(Guid id)
+        {
+            try
+            {
+                var file = _reportService.DownloadReport(id);
+
+                return File(new MemoryStream(file), "application/octet-stream", $"report-{id}.csv");
             }
             catch (Exception ex)
             {
