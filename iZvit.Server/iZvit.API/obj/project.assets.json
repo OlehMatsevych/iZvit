@@ -1019,6 +1019,20 @@
           }
         }
       },
+      "iZvit.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "iZvit.Core": "1.0.0",
+          "iZvit.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/iZvit.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/iZvit.Application.dll": {}
+        }
+      },
       "iZvit.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3719,6 +3733,11 @@
         "version.txt"
       ]
     },
+    "iZvit.Application/1.0.0": {
+      "type": "project",
+      "path": "../iZvit.Application/iZvit.Application.csproj",
+      "msbuildProject": "../iZvit.Application/iZvit.Application.csproj"
+    },
     "iZvit.Core/1.0.0": {
       "type": "project",
       "path": "../iZvit.Core/iZvit.Core.csproj",
@@ -3737,6 +3756,7 @@
       "Swashbuckle.AspNetCore >= 6.4.0",
       "Swashbuckle.AspNetCore.SwaggerGen >= 6.4.0",
       "Swashbuckle.AspNetCore.SwaggerUI >= 6.4.0",
+      "iZvit.Application >= 1.0.0",
       "iZvit.DataAccess >= 1.0.0"
     ]
   },
@@ -3767,6 +3787,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Application\\iZvit.Application.csproj": {
+              "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Application\\iZvit.Application.csproj"
+            },
             "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj": {
               "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj"
             }
