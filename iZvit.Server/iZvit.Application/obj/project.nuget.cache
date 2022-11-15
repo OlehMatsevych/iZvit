@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "54vlMXcTEalKY0/YwrFBsddbENEUt1LTWb9/xynlVqeZn8sDv1HE5SM60vswYhFPWkMqPhgQsZIFRjhR7sAmAg==",
+  "dgSpecHash": "V2CUAKlPJs1QjRN5obtk5C7/GYkv+irNxl3qULWpb3tULo/3YwS1oi0FvC6ho2IgG6hdgfA3o3UXZ7gXWOkSkw==",
   "success": true,
-  "projectFilePath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Application\\iZvit.Application.csproj",
+  "projectFilePath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.Application\\iZvit.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olehm\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
@@ -68,12 +68,5 @@
     "C:\\Users\\olehm\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Application\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

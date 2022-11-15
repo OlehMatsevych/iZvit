@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gm6Tv6IjTNmdJ5kurkZcpwtvnfuOMOzV84ZpEwkTCuOFMzgngyuaU+Ch7V0l0rXGBEy5XmSMyE6p3g2Jo/s3eg==",
+  "dgSpecHash": "l71KwO+ecF2p8iir2Vq9KoP5UjH6tRrn/dYN9BYNRN9KzDGzAwqEsjE++m1JIcqH6+b/20Xxt2oWF6BvHhvfJg==",
   "success": true,
-  "projectFilePath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
+  "projectFilePath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olehm\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

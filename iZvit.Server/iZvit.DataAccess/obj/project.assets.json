@@ -3052,11 +3052,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
+      "projectUniqueName": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
       "projectName": "iZvit.DataAccess",
-      "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
+      "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.DataAccess\\iZvit.DataAccess.csproj",
       "packagesPath": "C:\\Users\\olehm\\.nuget\\packages\\",
-      "outputPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.DataAccess\\obj\\",
+      "outputPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\olehm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3073,8 +3073,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj": {
-              "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj"
+            "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj": {
+              "projectPath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.Core\\iZvit.Core.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HuZh8S5eZZkHRXkSLtuzIfAAn7nIBChRAC2Iqae05CTQ+2rDeuwdDGnPM0bkwrlymds5hF8O++21+HlNUJ0mKw==",
+  "dgSpecHash": "le1dPLrEwj3R1AF46oPd3jPiQuuVZqq8mjRtCW4errf4sDMWhSc/chnYPXZ8vccfMPHhz22EYOoUe+HI2EPa/w==",
   "success": true,
-  "projectFilePath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.API\\iZvit.API.csproj",
+  "projectFilePath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit\\iZvit.Server\\iZvit.API\\iZvit.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olehm\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
