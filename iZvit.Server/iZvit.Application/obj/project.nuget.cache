@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "sDAALw8vTEzTxBiZtjAV0M+bSvHfWylVzNDFR1uZzV3NF6HevhWGcw0d4MWg1Bf13PUl4fMd5HR5570mLW4r4Q==",
+  "dgSpecHash": "54vlMXcTEalKY0/YwrFBsddbENEUt1LTWb9/xynlVqeZn8sDv1HE5SM60vswYhFPWkMqPhgQsZIFRjhR7sAmAg==",
   "success": true,
   "projectFilePath": "E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Application\\iZvit.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\olehm\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\olehm\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\olehm\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
@@ -67,5 +68,12 @@
     "C:\\Users\\olehm\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\olehm\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file E:\\4_course\\4.1\\Архітектура та проектуваняя пз\\project\\iZvit\\iZvit.Server\\iZvit.Application\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
