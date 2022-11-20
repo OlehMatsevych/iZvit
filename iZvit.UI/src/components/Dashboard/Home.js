@@ -24,19 +24,16 @@ export const Home = ({ reports, setModalActive, setReportById, reportById }) => 
     const report = { ...reportById }
 
     const handleFile = (key) => (e) => {
-        setTestReport(testReport => ({
-            ...testReport,
-            [key]: e.target.value
-        }))
-    }
-
-    const addFile = () => {
         const event = new Date()
         setTestReport(testReport => ({
             ...testReport,
             id: uuidv4(),
             createDate: event.toISOString().toString(),
+            [key]: e.target.value
         }))
+    }
+
+    const addFile = () => {
         reportsAPI.addReport(testReport)
         window.location.reload()
     }
