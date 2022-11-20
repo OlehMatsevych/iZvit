@@ -1,17 +1,14 @@
-import Cookies from "js-cookie"
 import fileDownload from "js-file-download"
 import { reportsAPI } from "../../api/api"
 import style from "./Home.module.css"
 import { useState } from "react"
 import Modal from "../Modal/Modal"
-import { Button, TextField } from "@mui/material"
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material"
 import { Filter } from "./Filter"
-import { MainHeader } from "./Header"
 import { AddFile } from "./AddFile"
 import { v4 as uuidv4 } from 'uuid';
 
-export const Home = ({ reports, setAuth, setModalActive, setReportById, reportById }) => {
-    const [parsedData, setParsedData] = useState([])
+export const Home = ({ reports, setModalActive, setReportById, reportById }) => {
     const [modalActiveEdit, setModalActiveEdit] = useState(false);
     const [modalActiveAddFile, setModalActiveAddFile] = useState(false);
     const [filterBy, setFilterBy] = useState('All');
@@ -21,7 +18,7 @@ export const Home = ({ reports, setAuth, setModalActive, setReportById, reportBy
         title: '',
         description: '',
         createdBy: '',
-        reportType: 0,
+        reportType: '',
     })
 
     const report = { ...reportById }
@@ -29,7 +26,7 @@ export const Home = ({ reports, setAuth, setModalActive, setReportById, reportBy
     const handleFile = (key) => (e) => {
         setTestReport(testReport => ({
             ...testReport,
-            [key]: Number.isNaN(+e.target.value) ? e.target.value : +e.target.value,
+            [key]: e.target.value
         }))
     }
 
@@ -42,11 +39,6 @@ export const Home = ({ reports, setAuth, setModalActive, setReportById, reportBy
         }))
         reportsAPI.addReport(testReport)
         window.location.reload()
-    }
-
-    const handleClick = () => {
-        setAuth(false)
-        Cookies.remove("user")
     }
 
     const downloadReport = (id) => {
@@ -67,7 +59,7 @@ export const Home = ({ reports, setAuth, setModalActive, setReportById, reportBy
         setReportById(reportById => ({
             ...reportById,
             createDate: event.toISOString().toString(),
-            [key]: e.target.value
+            [key]: e.target.value,
         }))
     }
 
@@ -81,8 +73,6 @@ export const Home = ({ reports, setAuth, setModalActive, setReportById, reportBy
         reportsAPI.getReportById(report.id).then(response => {
             setReportById(response.data)
         })
-
-        // reportsAPI.changeReportById(report.id)
         setModalActiveEdit(true)
     }
 
@@ -134,7 +124,6 @@ export const Home = ({ reports, setAuth, setModalActive, setReportById, reportBy
                     setFilterValue={setFilterValue}
                     setFilteredReports={setFilteredReports}
                 />
-                <Button variant="contained" className={style.titleButton} onClick={handleClick}>Logout</Button>
             </div>
             <div>
                 <div className={style.header}>
@@ -154,42 +143,98 @@ export const Home = ({ reports, setAuth, setModalActive, setReportById, reportBy
                 {reportsItems}
                 <AddFile
                     setModalActiveAddFile={setModalActiveAddFile}
-                    setParsedData={setParsedData}
                 />
             </div>
             <Modal active={modalActiveEdit} setActive={setModalActiveEdit}>
                 {Object.entries(report)?.map((el) => (el[0] === "id" || el[0] === "createDate"
                     ? <div key={el[0]}></div>
-                    : <div key={el[0]} className={style.itemList}>
-                        <TextField
-                            id="outlined-basic"
-                            label={el[0]}
-                            variant="outlined"
-                            value={el[1]}
-                            onChange={editReport(el[0])}
-                        />
-                    </div>
-                ))}
-                <Button variant="contained" onClick={updateReport}>
-                    Edit
-                </Button>
-            </Modal>
-            <Modal active={modalActiveAddFile} setActive={setModalActiveAddFile}>
-                <form>
-                    {Object.entries(testReport).map((el) => (
-                        <div key={el[0]} className={style.itemList}>
+                    : (el[0] === "reportType"
+                        ? <FormControl key={el[0]}>
+                            <InputLabel sx={{
+                                boxShadow: 'none', '#demo-simple-select-labele': {
+                                    color: "white"
+                                }
+                            }}
+                                id="demo-simple-select-label">Report Type</InputLabel>
+                            <Select
+                                sx={{
+                                    width: '222px',
+                                    boxShadow: 'none', '.MuiOutlinedInput-notchedOutline': {
+                                    }
+                                }}
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={el[1]}
+                                label="Report type"
+                                onChange={editReport(el[0])}
+                            >
+                                <MenuItem value={'Medical'}>Medical</MenuItem>
+                                <MenuItem value={'Social'}>Social</MenuItem>
+                                <MenuItem value={'Repurposing'}>Repurposing</MenuItem>
+                                <MenuItem value={'Employment'}>Employment</MenuItem>
+                            </Select>
+                        </FormControl>
+                        : <div key={el[0]} className={style.itemList}>
                             <TextField
                                 id="outlined-basic"
                                 label={el[0]}
                                 variant="outlined"
                                 value={el[1]}
-                                onChange={handleFile(el[0])}
+                                onChange={editReport(el[0])}
                             />
-                        </div>
-                    ))}
-                    <Button variant="contained" onClick={addFile}>
-                        Add
+                        </div>)
+                ))}
+                <div style={{ marginTop: '15px' }}>
+                    <Button variant="contained" onClick={updateReport}>
+                        Edit
                     </Button>
+                </div>
+            </Modal>
+            <Modal active={modalActiveAddFile} setActive={setModalActiveAddFile}>
+                <form>
+                    {Object.entries(testReport).map((el) => (el[0] === "id" || el[0] === "createDate"
+                        ? <div key={el[0]}></div>
+                        : (el[0] === "reportType"
+                            ? <FormControl key={el[0]}>
+                                <InputLabel sx={{
+                                    boxShadow: 'none', '#demo-simple-select-labele': {
+                                        color: "white"
+                                    }
+                                }}
+                                    id="demo-simple-select-label">Report Type</InputLabel>
+                                <Select
+                                    sx={{
+                                        width: '222px',
+                                        boxShadow: 'none', '.MuiOutlinedInput-notchedOutline': {
+                                        }
+                                    }}
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={el[1]}
+                                    label="Report Type"
+                                    onChange={handleFile(el[0])}
+                                >
+                                    <MenuItem value={'Medical'}>Medical</MenuItem>
+                                    <MenuItem value={'Social'}>Social</MenuItem>
+                                    <MenuItem value={'Repurposing'}>Repurposing</MenuItem>
+                                    <MenuItem value={'Employment'}>Employment</MenuItem>
+                                </Select>
+                            </FormControl>
+                            : <div key={el[0]} className={style.itemList}>
+                                <TextField
+                                    id="outlined-basic"
+                                    label={el[0]}
+                                    variant="outlined"
+                                    value={el[1]}
+                                    onChange={handleFile(el[0])}
+                                />
+                            </div>)
+                    ))}
+                    <div style={{ marginTop: '15px' }}>
+                        <Button variant="contained" onClick={addFile}>
+                            Add
+                        </Button>
+                    </div>
                 </form>
             </Modal>
         </div>

@@ -1,7 +1,9 @@
+import { Box, Button, Container, createTheme, CssBaseline, TextField, ThemeProvider } from '@mui/material';
 import Cookies from "js-cookie";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import style from '../Login/Login.module.css'
+
+const theme = createTheme();
 
 const Register = () => {
     const [login, setLogin] = useState('');
@@ -28,31 +30,55 @@ const Register = () => {
     }
 
     return (
-        <div>
-            <form className={style.form}>
-                <div>
-                    <input
-                        className={style.input}
-                        value={login}
-                        onChange={handleLogin}
-                        type='text'
-                        placeholder="login" />
-                </div>
-                <div>
-                    <input
-                        className={style.input}
-                        value={password}
-                        onChange={handlePassword}
-                        type="password"
-                        placeholder="password" />
-                </div>
-                <div>
-                    <button className={style.button} onClick={handleClick}>
-                        register
-                    </button>
-                </div>
-            </form>
-        </div>
+        <ThemeProvider theme={theme}>
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    
+                    <Box component="form" noValidate sx={{ mt: 1 }}>
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="email"
+                            label="Login"
+                            name="email"
+                            autoComplete="email"
+                            autoFocus
+                            value={login}
+                            onChange={handleLogin}
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="current-password"
+                            value={password}
+                            onChange={handlePassword}
+                        />
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                            onClick={handleClick}
+                        >
+                            Sign Up
+                        </Button>
+                    </Box>
+                </Box>
+            </Container>
+        </ThemeProvider>
     )
 }
 
