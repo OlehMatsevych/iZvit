@@ -31,7 +31,10 @@ export const Filter = ({ filterBy, filterValue, setFilterBy, setFilterValue, set
         <div>
             <div className={style.filterContainer}>
                 <FormControl>
-                    <InputLabel id="demo-simple-select-label">Filter By</InputLabel>
+                    <InputLabel sx={{ boxShadow: 'none', '#demo-simple-select-labele': { 
+                            color: "white"
+                        } }} 
+                        id="demo-simple-select-label">Filter By</InputLabel>
                     <Select
                         sx={{ boxShadow: 'none', '.MuiOutlinedInput-notchedOutline': { 
                             borderRight: 0, 
@@ -52,6 +55,7 @@ export const Filter = ({ filterBy, filterValue, setFilterBy, setFilterValue, set
                     sx={{ 
                         '.MuiOutlinedInput-notchedOutline': {
                         borderRadius: 0,
+                        color: "white"
                     } }}
                     id="outlined-basic"
                     label="Filter value"
