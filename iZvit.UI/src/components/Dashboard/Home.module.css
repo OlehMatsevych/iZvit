@@ -41,7 +41,7 @@
 }
 
 .reportItem:hover {
-    background-color: rgb(242, 242, 242);
+    background-color: #2c2c2c;
 }
 
 .itemButtons button {
@@ -68,7 +68,7 @@
 }
 
 .addButton:hover {
-    background-color: #298b3e;
+    background-color: #298b3e !important; 
 }
 
 .addInput {
@@ -77,7 +77,7 @@
     color: #FFF;
     border-radius: 3px;
     cursor: pointer;
-    width: 100px;
+    width: 120px;
     background-color: #30a54a;
 }
 
