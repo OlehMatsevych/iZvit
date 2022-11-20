@@ -6,6 +6,7 @@ import { useState } from "react"
 import Modal from "../Modal/Modal"
 import { Button, TextField } from "@mui/material"
 import { Filter } from "./Filter"
+import { MainHeader } from "./Header"
 import { AddFile } from "./AddFile"
 import { v4 as uuidv4 } from 'uuid';
 

@@ -1,6 +1,21 @@
-.App {
+html, body{
+  height:100%;
+  background: #313030;
+  color: white;
+}
+.Header{
+  background: #1e1d1d;
+  color: white;
+}
+.Dashboard {
   text-align: center;
   margin: 5%;
+  margin-bottom: 10%;
+}
+.Footer{
+  background: #1e1d1d;
+  color: white;
+  margin-bottom: 0;
 }
 
 .App-logo {

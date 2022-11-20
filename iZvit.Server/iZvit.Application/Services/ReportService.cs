@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CsvHelper;
+using CsvHelper.TypeConversion;
 using iZvit.Application.FilterModels;
 using iZvit.Application.Models;
 using iZvit.Application.Responses;
@@ -86,13 +87,15 @@ namespace iZvit.Application.Services
         public byte[] DownloadReport(Guid id)
         {
             var entity = _repository.GetWhere(x => x.Id == id).FirstOrDefault();
+            List<Report> reports = new List<Report>();
+            reports.Add(entity);
 
             using (MemoryStream stream = new MemoryStream())
             {
                 using (TextWriter textWriter = new StreamWriter(stream))
                 using (CsvWriter csv = new CsvWriter(textWriter, CultureInfo.InvariantCulture))
                 {
-                    csv.WriteRecord(entity);
+                    csv.WriteRecords(reports);
                 }
                 return stream.ToArray();
             }

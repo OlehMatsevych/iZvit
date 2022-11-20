@@ -5,6 +5,8 @@ import { reportsAPI } from './api/api';
 import './App.css';
 import { Home } from './components/Dashboard/Home';
 import { Login } from './components/Login/Login';
+import { MainHeader } from './components/Dashboard/Header';
+import { StickyFooter } from './components/Dashboard/Footer';
 import Modal from './components/Modal/Modal';
 import { ProtectedLogin } from './components/protectedRoute/protectedLogin';
 import { ProtectedRoute } from './components/protectedRoute/protectedRoute';
@@ -30,27 +32,31 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={
-          <ProtectedLogin auth={auth}>
-            <Login setAuth={setAuth} />
-          </ProtectedLogin>
-        }/>
-        <Route path='/register' element={
-          <ProtectedLogin auth={auth}>
-            <Register />
-          </ProtectedLogin>
-        }/>
-        <Route path='/home' element={
-          <ProtectedRoute auth={auth}>
-            <Home reportById={reportById} setReportById={setReportById} setModalActive={setModalActive} reports={reports} setAuth={setAuth} />
-          </ProtectedRoute>
-        }/>
-      </Routes>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <h1>{reportById?.title}</h1>
-        <p>{reportById?.description}</p>
-      </Modal>
+    <MainHeader/>
+      <div className='Dashboard'>
+        <Routes>
+          <Route path='/' element={
+            <ProtectedLogin auth={auth}>
+              <Login setAuth={setAuth} />
+            </ProtectedLogin>
+          }/>
+          <Route path='/register' element={
+            <ProtectedLogin auth={auth}>
+              <Register />
+            </ProtectedLogin>
+          }/>
+          <Route path='/home' element={
+            <ProtectedRoute auth={auth}>
+              <Home reportById={reportById} setReportById={setReportById} setModalActive={setModalActive} reports={reports} setAuth={setAuth} />
+            </ProtectedRoute>
+          }/>
+        </Routes>
+        <Modal active={modalActive} setActive={setModalActive}>
+          <h1>{reportById?.title}</h1>
+          <p>{reportById?.description}</p>
+        </Modal>
+      </div>
+      <StickyFooter />
     </div>
   );
 }

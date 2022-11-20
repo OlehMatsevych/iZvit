@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://localhost:7053/",
+    baseURL: "https://localhost:54781/",
 })
 
 export const reportsAPI = {
