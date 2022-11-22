@@ -28,13 +28,15 @@ export const Login = ({ setAuth }) => {
     }
 
     const handleClick = () => {
-        const login = Cookies.get('login')
+        const login = Cookies.get('login').split(' ')[0]
+        const role = Cookies.get('login').split(' ')[1]
         const password = Cookies.get('password')
         if (login === userLogin && password === userPassword) {
             setAuth(true)
             Cookies.set("user", "loginTrue")
+            alert(`You are sing in as ${role}`)
         } else {
-            alert('wrong login or password')
+            alert('Wrong login or password')
         }
     }
     
