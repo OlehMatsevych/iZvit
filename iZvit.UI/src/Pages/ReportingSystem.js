@@ -1,14 +1,14 @@
 import fileDownload from "js-file-download"
-import { reportsAPI } from "../../api/api"
+import { reportsAPI } from "../api/api"
 import style from "./Home.module.css"
 import { useState } from "react"
-import Modal from "../Modal/Modal"
+import Modal from "../components/Modal/Modal"
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material"
-import { Filter } from "./Filter"
-import { AddFile } from "./AddFile"
+import { Filter } from "../components/Dashboard/Filter"
+import { AddFile } from "../components/Dashboard/AddFile"
 import { v4 as uuidv4 } from 'uuid';
 
-export const Home = ({ reports, setModalActive, setReportById, reportById }) => {
+export const ReportingSystem = ({ reports, setModalActive, setReportById, reportById }) => {
     const [modalActiveEdit, setModalActiveEdit] = useState(false);
     const [modalActiveAddFile, setModalActiveAddFile] = useState(false);
     const [filterBy, setFilterBy] = useState('All');

@@ -63,10 +63,10 @@ export const Login = ({ setAuth }) => {
                             margin="normal"
                             required
                             fullWidth
-                            id="email"
+                            id="login"
                             label="Login"
-                            name="email"
-                            autoComplete="email"
+                            name="login"
+                            autoComplete="login"
                             autoFocus
                             value={userLogin}
                             onChange={handleUserLogin}

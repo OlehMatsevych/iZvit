@@ -1,10 +1,8 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -12,22 +10,32 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-const pages = ['Reports', 'Contacts', 'Help'];
+const analysisAndStatisticsPages = {
+  'page1': 'Статистика і аналітика по роботі окремих модулів',
+  'page2': 'Статистика по оремому користувачу',
+  'reportingsystem': 'Система звітів по наданій допомозі',
+  'page4': 'Збір програмної статистики',
+  'page5': 'Система формування фінансових звітів',
+  'page6': 'Система аналізу розвитку та проблем',
+};
 
-export const MainHeader = ({ setAuth }) => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+const pages = {
+  'page7': 'Information',
+  'page8': 'Сommunication',
+  'page9': 'User Account',
+  'page10': 'Formation a package of help'
+};
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+export const MainHeader = ({ setAuth, }) => {
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -38,6 +46,19 @@ export const MainHeader = ({ setAuth }) => {
     setAuth(false)
     Cookies.remove("user")
   }
+
+  const handleClick = () => {
+    setIsOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsOpen(false)
+  }
+
+  const handleClickPage = (page) => {
+    navigate(`/${page}`)
+  }
+
   return (
     <div className='Header'>
       <Container maxWidth="xl">
@@ -47,7 +68,7 @@ export const MainHeader = ({ setAuth }) => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -60,43 +81,6 @@ export const MainHeader = ({ setAuth }) => {
           >
             iZvit
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -117,13 +101,38 @@ export const MainHeader = ({ setAuth }) => {
             iZvit
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            <Button
+              sx={{ my: 2, color: 'white', display: 'block' }}
+              onClick={handleClick}
+            >
+              Analysis And Statistics
+            </Button>
+            <Menu
+              placement="bottom-start"
+              id="demo-positioned-menu"
+              aria-labelledby="demo-positioned-button"
+              open={isOpen}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+            >
+              {Object.entries(analysisAndStatisticsPages).map(page => (
+                <MenuItem key={page[0]} onClick={() => handleClickPage(page[0])} value={page[0]}>{page[1]}</MenuItem>
+              ))}
+            </Menu>
+            {Object.entries(pages).map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page[0]}
+                onClick={() => handleClickPage(page[0])}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page[1]}
               </Button>
             ))}
           </Box>
@@ -160,6 +169,6 @@ export const MainHeader = ({ setAuth }) => {
           </Box>
         </Toolbar>
       </Container>
-    </div>
+    </div >
   );
 }

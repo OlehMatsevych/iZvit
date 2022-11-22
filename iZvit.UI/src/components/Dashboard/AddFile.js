@@ -1,4 +1,4 @@
-import style from "./Home.module.css"
+import style from "../../Pages/Home.module.css"
 import Papa from "papaparse"
 import { Button } from "@mui/material"
 import { reportsAPI } from "../../api/api"
