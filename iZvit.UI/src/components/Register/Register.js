@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
+const roles = ['admin', 'user', 'patient']
+
 const Register = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate()
-
     const handleLogin = (event) => {
         setLogin(event.target.value)
     }
@@ -20,12 +21,13 @@ const Register = () => {
 
     const handleClick = (e) => {
         if (login.length && password.length) {
-            Cookies.set("login", login)
+            const randomRole = roles[Math.floor(Math.random() * roles.length)];
+            Cookies.set("login", `${login} ${randomRole}`)
             Cookies.set("password", password)
             navigate('/')
         } else {
             e.preventDefault()
-            alert('wrong login or password')
+            alert('Wrong login or password')
         }
     }
 
@@ -40,7 +42,7 @@ const Register = () => {
                         alignItems: 'center',
                     }}
                 >
-                    
+
                     <Box component="form" noValidate sx={{ mt: 1 }}>
                         <TextField
                             margin="normal"
