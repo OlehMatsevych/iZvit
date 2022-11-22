@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { reportsAPI } from './api/api';
 import './App.css';
-import { Home } from './components/Dashboard/Home';
+import { ReportingSystem } from './Pages/ReportingSystem';
 import { Login } from './components/Login/Login';
 import { MainHeader } from './components/Dashboard/Header';
 import Modal from './components/Modal/Modal';
 import { ProtectedLogin } from './components/protectedRoute/protectedLogin';
 import { ProtectedRoute } from './components/protectedRoute/protectedRoute';
 import Register from './components/Register/Register';
+import { Home } from './Pages/Home';
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -44,9 +45,14 @@ function App() {
               <Register />
             </ProtectedLogin>
           } />
+          <Route path='/reportingsystem' element={
+            <ProtectedRoute auth={auth}>
+              <ReportingSystem reportById={reportById} setReportById={setReportById} setModalActive={setModalActive} reports={reports} setAuth={setAuth} />
+            </ProtectedRoute>
+          } />
           <Route path='/home' element={
             <ProtectedRoute auth={auth}>
-              <Home reportById={reportById} setReportById={setReportById} setModalActive={setModalActive} reports={reports} setAuth={setAuth} />
+              <Home />
             </ProtectedRoute>
           } />
         </Routes>

@@ -1,6 +1,6 @@
 import { Button, FormControl, MenuItem, Select, TextField } from "@mui/material"
 import { reportsAPI } from "../../api/api"
-import style from './Home.module.css'
+import style from "../../Pages/Home.module.css"
 
 export const Filter = ({ filterBy, filterValue, setFilterBy, setFilterValue, setFilteredReports }) => {
 
