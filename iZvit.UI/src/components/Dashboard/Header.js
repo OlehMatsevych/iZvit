@@ -11,9 +11,8 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-const pages = ['Contacts', 'Help'];
 const analysisAndStatisticsPages = {
   'page1': 'Статистика і аналітика по роботі окремих модулів',
   'page2': 'Статистика по оремому користувачу',
@@ -23,15 +22,17 @@ const analysisAndStatisticsPages = {
   'page6': 'Система аналізу розвитку та проблем',
 };
 
+const pages = {
+  'page7': 'Information',
+  'page8': 'Сommunication',
+  'page9': 'User Account',
+  'page10': 'Formation a package of help'
+};
+
 export const MainHeader = ({ setAuth, }) => {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [pageUrl, setPageUrl] = useState('');
   const navigate = useNavigate()
-
-  useEffect(() => {
-    navigate(`/${pageUrl}`)
-  }, [pageUrl])
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -54,8 +55,8 @@ export const MainHeader = ({ setAuth, }) => {
     setIsOpen(false)
   }
 
-  const handleChange = (e) => {
-    setPageUrl(e.target.value)
+  const handleClickPage = (page) => {
+    navigate(`/${page}`)
   }
 
   return (
@@ -67,7 +68,7 @@ export const MainHeader = ({ setAuth, }) => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -112,7 +113,6 @@ export const MainHeader = ({ setAuth, }) => {
               aria-labelledby="demo-positioned-button"
               open={isOpen}
               onClose={handleClose}
-              onChange={handleChange}
               anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'left',
@@ -123,15 +123,16 @@ export const MainHeader = ({ setAuth, }) => {
               }}
             >
               {Object.entries(analysisAndStatisticsPages).map(page => (
-                <MenuItem value={page[0]}>{page[1]}</MenuItem>
+                <MenuItem key={page[0]} onClick={() => handleClickPage(page[0])} value={page[0]}>{page[1]}</MenuItem>
               ))}
             </Menu>
-            {pages.map((page) => (
+            {Object.entries(pages).map((page) => (
               <Button
-                key={page}
+                key={page[0]}
+                onClick={() => handleClickPage(page[0])}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page[1]}
               </Button>
             ))}
           </Box>
