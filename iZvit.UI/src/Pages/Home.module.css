@@ -97,3 +97,78 @@
 .filterBtn {
     height: 55px;
 }
+
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
+
+:root {
+  --main-white-color: #f2f2f2;
+  --main-black-color: black;
+  --main-purple-color: #9e89b8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font: 16px/1.5 "Dosis", sans-serif;
+  /*IE FIX*/
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+/* CONTAINER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper > * {
+  padding: 20px;
+}
+
+/* MAIN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  min-height: 350px;
+  background: var(--main-purple-color)
+    url('https://www.clipartmax.com/png/middle/172-1725628_autism-pantry-program-life-save-icon-png.png') no-repeat
+    center / cover;
+  background-blend-mode: luminosity;
+  color: var(--main-white-color);
+}
+
+.page-main div {
+  max-width: 500px;
+}
+
+.page-main h1 {
+  margin-bottom: 20px;
+}
+
+.page-main p + p {
+  margin-top: 10px;
+}
